@@ -1,0 +1,7 @@
+---
+name: cassandra_dashboards
+
+templates:
+  Cassandra.json: Cassandra.json 
+
+packages: []

@@ -1,0 +1,10 @@
+---
+name: cassandra_alerts
+
+templates: 
+  jmx_exporter.alerts: jmx_exporter.alerts
+
+properties:
+  cassandra_alerts.scrape_error.evaluation_time:
+    description: "Scrape error alert evaluation time"
+    default: 10m  

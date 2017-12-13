@@ -1,0 +1,12 @@
+ALERT CassandraConnectionTimeoutsError
+  IF max(cassandra_connection_timeouts) by(instance) != 0
+  FOR <%= p('cassandra_alerts.scrape_error.evaluation_time') %>
+  LABELS {
+    service = "cassandra-exporter",
+    severity = "critical",
+  }
+  ANNOTATIONS {
+    summary = "cassandra-exporter `{{$labels.instance}}` connection timeouts error",
+    description = "The `cassandra_exporter` at `{{$labels.instance}}` detects a timeout",
+  }
+
