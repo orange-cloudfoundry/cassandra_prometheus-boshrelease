@@ -10,5 +10,31 @@ It adds missing [grafana dashboard](https://grafana.com/dashboards/371) and prom
 To deploy the grafana dashboard, edit your prometheus deployment file:
 
 ```
+releases:
+...
+  - {name: cassandra_prometheus, version: latest }
 
+instance_groups:
+- name: prometheus-server
+...
+  jobs:
+  ...
+  - name: cassandra_alerts
+    release: cassandra_prometheus
+  - name: prometheus
+    release: prometheus
+    properties:
+      prometheus:
+        ...
+        rule_files:
+        ...
+          - /var/vcap/jobs/cassandra_alerts/*.alerts
+
+
+- name: grafana
+...
+  jobs:
+  ...
+  - name: cassandra_dashboards
+    release: cassandra_prometheus
 ```
