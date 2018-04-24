@@ -1,0 +1,12 @@
+groups:
+- name: cassandra
+  rules:
+  - alert: CassandraConnectionTimeoutsError
+    expr: max by(instance) (cassandra_connection_timeouts) != 0
+    for: 10m
+    labels:
+      service: cassandra-exporter
+      severity: critical
+    annotations:
+      description: The `cassandra_exporter` at `{{$labels.instance}}` detects a timeout
+      summary: cassandra-exporter `{{$labels.instance}}` connection timeouts error
