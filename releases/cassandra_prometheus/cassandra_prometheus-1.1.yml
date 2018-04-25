@@ -1,0 +1,13 @@
+name: cassandra_prometheus
+version: "1.1"
+commit_hash: 29b2bc9
+uncommitted_changes: false
+jobs:
+- name: cassandra_alerts
+  version: dca860c82b010208aca48f5c282692d3cf12efb9
+  fingerprint: dca860c82b010208aca48f5c282692d3cf12efb9
+  sha1: 438c94acb2991e43560f6534ec3e011b7285da27
+- name: cassandra_dashboards
+  version: 4ed69d203f2f5ac6f010294e7be118be28cb3be3
+  fingerprint: 4ed69d203f2f5ac6f010294e7be118be28cb3be3
+  sha1: 28dc487e8ffa3a431965bfae8c4569fb48aa4eba
