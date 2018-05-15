@@ -3,6 +3,7 @@ name: cassandra_alerts
 
 templates: 
   jmx_exporter.alerts: jmx_exporter.alerts
+  jmx_exporter.alerts.yml: jmx_exporter.alerts.yml
 
 properties:
   cassandra_alerts.scrape_error.evaluation_time:
